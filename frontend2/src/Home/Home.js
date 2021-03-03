@@ -8,6 +8,22 @@ import doctor from "./doctor.png";
 import arrow from "./arrow.png";
 import sanitise from "./sanitise.jpg";
 
+const puppeteer = require('puppeteer');
+
+async function scrapeStatNum(url) {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(url);
+
+  const name = await page.$x('//*[@id="widgetYfhJjRW"]/div[1]/h1');//*[@id="widgetYfhJjRW"]/div[1]/h1
+  const src = await name.getProperty('src');
+  const srcTxt = await src.jsonValue();
+
+  console.log({srcTxt})
+}
+
+scrapeStatNum('https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers')
+
 class Home extends Component {
   constructor(props) {
     super(props);

@@ -93,7 +93,18 @@ class App extends Component {
           </nav>
         </div>
 
+<<<<<<< HEAD
         <div></div>
+=======
+        <div className="App">
+          <header className="App-header">
+            
+            
+            <img src="microphone.png" alt="Italian Trulli" width = "200" height = "100" ></img>
+            <button type="button">Click here to ask for corona stats!</button>
+          </header>
+        </div>
+>>>>>>> 43fbc30f7f19bdae9168af4680c0b75bcf6982f9
       </div>
     );
   }
